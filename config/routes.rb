@@ -3,7 +3,7 @@ Rails.application.routes.draw do
    resources :bookings, only: [:create]
  end
 
-  resources :bookings, only: [ :index, :show ]
+  resources :bookings, only: [ :index, :show, :destroy ]
 
   devise_for :users
   root to: "pages#home"

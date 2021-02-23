@@ -5,7 +5,11 @@
       <li><%= @booking.date %> </li>
       <li><%= @booking.sauna.name %> </li>
       <li><%= @booking.sauna.description %> </li>
-      <li><%= @booking.sauna.temperature %> degres Celsius </li>
-      <li><%= @booking.sauna.seat %> seats</li>
+      <li><%= @booking.sauna.temperature %>°</li>
+      <li><%= pluralize(@booking.sauna.seat.to_i, "seat") %></li>
+      <li><%= link_to "Cancel booking",
+                      booking_path(booking),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></li>
   </ul>
 </div>

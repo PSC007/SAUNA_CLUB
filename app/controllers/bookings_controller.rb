@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
+  before_action :find_booking, only: [:show, :edit, :destroy]
+
   def index
     @bookings = Booking.all.where(user: current_user)
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -29,11 +30,17 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking.destroy
+    redirect_to saunas_path
   end
 
   private
 
   def booking_params
     params.require(:booking).permit(:date)
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 end
