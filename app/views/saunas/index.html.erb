@@ -1,9 +1,26 @@
 <h1>Find the sauna you would like to book</h1>
 
-<p><% @saunas.each do |sauna|%>
-    <%= sauna.user %>
-    <%= sauna.description %>
-    <%= sauna.temperature %>
-    <%= sauna.seat %>
+<% @saunas.each do |sauna|%>
+
+        <div>
+          <h2><%= sauna.user.first_name %></h2>
+          <p><%= sauna.description %></p>
+          <p><%= sauna.temperature %></p>
+          <p><%= sauna.seat %></p>
+        </div>
+
 <% end %>
-</p>
+
+
+<div class="card-sauna">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-sauna-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-sauna-pricing">£99.99</h2>
+<!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+  </div>
+</div>
+
