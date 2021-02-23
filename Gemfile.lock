@@ -124,13 +124,13 @@ GEM
     mime-types-data (3.2021.0212)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
-    mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.5)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.11.1-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -252,15 +252,9 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-<<<<<<< HEAD
-  ruby
-=======
-<<<<<<< HEAD
-=======
   x86_64-darwin-19
->>>>>>> master
   x86_64-darwin-20
->>>>>>> 4e57d57c81fd5adcda276abe62960debd1a75ca6
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
@@ -293,7 +287,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-
-
    2.2.11
-
