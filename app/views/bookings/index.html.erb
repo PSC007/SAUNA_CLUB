@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Your bookings</h1>
+
+  <% @bookings.each do |booking| %>
+    <ul>
+      <li><%= booking.date %></li>
+      <li><%= booking.sauna.temperature %></li>
+      <li><%= booking.sauna.seat %> seat</li>
+    </ul>
+  <% end %>
+
+</div>

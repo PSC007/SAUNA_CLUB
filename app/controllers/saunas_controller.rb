@@ -5,6 +5,9 @@ class SaunasController < ApplicationController
 
   def show
     @sauna = Sauna.find(params[:id])
+    @sauna.user = current_user
+    @booking = Booking.new
+    @booking.sauna = @sauna
   end
 
   def new
