@@ -1,14 +1,31 @@
 <div class="container">
   <h1>Find the sauna you would like to book</h1>
+
+
+<div class="card-container">
+  <% @saunas.each do |sauna|%>
+  <div class="card-sauna">
+    <% if sauna.photo.attached? %>
+      <%= cl_image_tag(sauna.photo.key)%>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
+
+    <div class="card-sauna-infos">
+      <div>
+        <h2><%= sauna.user.first_name %></h2>
+        <p><%= sauna.description %></p>
+        <p><%= sauna.seat %></p>
+      </div>
+      <h2 class="card-sauna-temperature"><%= sauna.temperature %></h2>
+  <!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+    </div>
+  </div>
+  <% end %>
 </div>
 
-<div class="container">
-  <p><% @saunas.each do |sauna|%>
-      <ul><br><strong><%= link_to sauna.name, sauna_path(sauna) %></strong></br>
-          <li><%= sauna.description %></li>
-          <li><%= "#{sauna.temperature} degrees" %></li>
-          <li><%= "#{sauna.seat} seat".pluralize(1) %></li>
-      </ul><% end %>
-    </div>
-  </p>
 </div>
+
+
+
+
