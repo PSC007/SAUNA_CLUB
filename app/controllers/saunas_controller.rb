@@ -1,10 +1,11 @@
 class SaunasController < ApplicationController
+  before_action :find_sauna, only: [ :show, :edit, :update, :destroy ]
+
   def index
     @saunas = Sauna.all
   end
 
   def show
-    @sauna = Sauna.find(params[:id])
     @sauna.user = current_user
     @booking = Booking.new
     @booking.sauna = @sauna
@@ -28,15 +29,23 @@ class SaunasController < ApplicationController
   end
 
   def update
+    @sauna.update(sauna_params)
+    redirect_to sauna_path(@sauna)
   end
 
   def destroy
+    @sauna.destroy
+    redirect_to saunas_path
   end
 
   private
 
   def sauna_params
     params.require(:sauna).permit(:photo, :description, :temperature, :seat)
+  end
+
+  def find_sauna
+    @sauna = Sauna.find(params[:id])
   end
 
 end

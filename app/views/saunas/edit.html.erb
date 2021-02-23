@@ -1,2 +1,11 @@
-<h1>Saunas#edit</h1>
-<p>Find me in app/views/saunas/edit.html.erb</p>
+<h1>Change details of <strong><%= @sauna.name %></strong>!</h1>
+
+<div class="container">
+    <%= simple_form_for @sauna do |f| %>
+    <%= f.input :description %>
+    <%= f.input :temperature %>
+    <%= f.input :seat %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Confirm changes", notice: "Sauna has been changed" %>
+    <% end %>
+  </div>
