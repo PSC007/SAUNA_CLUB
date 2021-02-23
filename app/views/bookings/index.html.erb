@@ -6,6 +6,7 @@
       <li><%= booking.date %></li>
       <li><%= booking.sauna.temperature %></li>
       <li><%= booking.sauna.seat %> seat</li>
+      <li><%= link_to "Show this booking", booking_path(booking) %> </li>
     </ul>
   <% end %>
 
