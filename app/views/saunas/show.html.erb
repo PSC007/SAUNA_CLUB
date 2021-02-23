@@ -1,2 +1,9 @@
 <h1>Saunas#show</h1>
 <p>Find me in app/views/saunas/show.html.erb</p>
+
+<div class="container">
+  <%= simple_form_for [@sauna, @booking] do |f| %>
+      <%= f.date :date %>
+      <%= f.submit "Book your sauna" %>
+  <% end %>
+</div>
