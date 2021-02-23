@@ -15,19 +15,19 @@ user1 = User.new(first_name: "Santi", last_name:"Muller", email: "santi@gmail.co
 user1.save!
 
 puts "creating 5 sauna seeds"
-sauna1 = Sauna.new(seat: 1, description: "nice and cosy", temperature: "75 degres", user_id: user1.id)
+sauna1 = Sauna.new(seat: 1, description: "nice and cosy", temperature: "75 degres", user: user1)
 sauna1.save!
 
-sauna2 = Sauna.new(seat: 2, description: "perfect for couple", temperature: "80 degres", user_id: user1.id)
+sauna2 = Sauna.new(seat: 2, description: "perfect for couple", temperature: "80 degres", user: user1)
 sauna2.save!
 
-sauna3 = Sauna.new(seat: 3, description: "nice river for cooling", temperature: "85 degres", user_id: user1.id)
+sauna3 = Sauna.new(seat: 3, description: "nice river for cooling", temperature: "85 degres", user: user1)
 sauna3.save!
 
-sauna4 = Sauna.new(seat: 5, description: "hot and sweaty", temperature: "90 degres", user_id: user1.id)
+sauna4 = Sauna.new(seat: 5, description: "hot and sweaty", temperature: "90 degres", user: user1)
 sauna4.save!
 
-sauna5 = Sauna.new(seat: 6, description: "familly size", temperature: "95 degres", user_id: user1.id)
+sauna5 = Sauna.new(seat: 6, description: "familly size", temperature: "95 degres", user: user1)
 sauna5.save!
 
 puts "five sauna created"
