@@ -1,2 +1,13 @@
-<h1>Saunas#index</h1>
-<p>Find me in app/views/saunas/index.html.erb</p>
+<div class="container">
+  <h1>Find the sauna you would like to book</h1>
+</div>
+
+<div class="container">
+  <p><% @saunas.each do |sauna|%>
+      <br><strong><%= sauna.user.first_name %></strong></br>
+      <br><%= sauna.description %></br>
+      <br><%= sauna.temperature %></br>
+      <%= "#{sauna.seat} seats"%>
+  <% end %>
+  </p>
+</div>
