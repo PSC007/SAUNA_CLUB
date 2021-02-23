@@ -1,7 +1,8 @@
 <div class="container">
   <ul>
     <li><%= @sauna.description %></li>
-    <li><%= @sauna.temperature %></li>
+    <li>Temperature: <%= @sauna.temperature %> degres Celsius</li>
+    <li>Number of seats: <%= @sauna.seat %></li>
     <li>
       <% if @sauna.photo.attached? %>
         <%= cl_image_tag @sauna.photo.key, height: 800, width: 900, crop: :fill %>
@@ -9,6 +10,3 @@
     </li>
   </ul>
 </div>
-
-
-<%= @sauna.seat %>
