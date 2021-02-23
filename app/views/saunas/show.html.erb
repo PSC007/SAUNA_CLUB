@@ -1,2 +1,14 @@
-<h1>Saunas#show</h1>
-<p>Find me in app/views/saunas/show.html.erb</p>
+<div class="container">
+  <ul>
+    <li><%= @sauna.description %></li>
+    <li><%= @sauna.temperature %></li>
+    <li>
+      <% if @sauna.photo.attached? %>
+        <%= cl_image_tag @sauna.photo.key, height: 800, width: 900, crop: :fill %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+
+<%= @sauna.seat %>
