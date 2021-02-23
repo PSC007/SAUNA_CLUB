@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url "sauna.jpg" %>' );">
+  <div class="container">
+    <h1>The Sauna Club</h1>
+    <p>Sweat the stress out!</p>
+    <%= link_to "Discover our Saunas", saunas_path %>
+  </div>
+</div>
