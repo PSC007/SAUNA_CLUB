@@ -1,2 +1,11 @@
-<h1>Saunas#new</h1>
-<p>Find me in app/views/saunas/new.html.erb</p>
+<h1>Offer your hot box</h1>
+
+  <div class="container">
+    <%= simple_form_for @sauna do |f| %>
+    <%= f.input :description %>
+    <%= f.input :temperature %>
+    <%= f.input :seat %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Add Sauna" %>
+    <% end %>
+  </div>
