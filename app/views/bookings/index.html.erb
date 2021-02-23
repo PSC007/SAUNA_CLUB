@@ -2,6 +2,7 @@
   <h1>Your bookings</h1>
 
   <% @bookings.each do |booking| %>
+  <strong><%= link_to booking.sauna.name, sauna_path(booking.sauna) %></strong>
     <ul>
       <li><%= booking.date %></li>
       <li><%= booking.sauna.temperature %></li>

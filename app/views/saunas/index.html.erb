@@ -4,10 +4,11 @@
 
 <div class="container">
   <p><% @saunas.each do |sauna|%>
-      <br><strong><%= sauna.name %></strong></br>
-      <br><%= sauna.description %></br>
-      <%= "#{sauna.temperature} degrees" %>
-      <%= "#{sauna.seat} seats"%>
-  <% end %>
+      <ul><br><strong><%= link_to sauna.name, sauna_path(sauna) %></strong></br>
+          <li><%= sauna.description %></li>
+          <li><%= "#{sauna.temperature} degrees" %></li>
+          <li><%= "#{sauna.seat} seat".pluralize(1) %></li>
+      </ul><% end %>
+    </div>
   </p>
 </div>
