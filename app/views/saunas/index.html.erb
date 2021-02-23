@@ -1,9 +1,13 @@
-<h1>Find the sauna you would like to book</h1>
+<div class="container">
+  <h1>Find the sauna you would like to book</h1>
+</div>
 
-<p><% @saunas.each do |sauna|%>
-    <%= sauna.user %>
-    <%= sauna.description %>
-    <%= sauna.temperature %>
-    <%= sauna.seat %>
-<% end %>
-</p>
+<div class="container">
+  <p><% @saunas.each do |sauna|%>
+      <br><strong><%= sauna.user.first_name %></strong></br>
+      <br><%= sauna.description %></br>
+      <br><%= sauna.temperature %></br>
+      <%= "#{sauna.seat} seats"%>
+  <% end %>
+  </p>
+</div>
