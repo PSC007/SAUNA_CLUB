@@ -4,6 +4,7 @@ class SaunasController < ApplicationController
   end
 
   def show
+    @sauna = Sauna.find(params[:id])
   end
 
   def new
@@ -12,6 +13,7 @@ class SaunasController < ApplicationController
 
   def create
     @sauna = Sauna.new(sauna_params)
+    @sauna.user = current_user
     if @sauna.save
       redirect_to sauna_path(@sauna)
     else
