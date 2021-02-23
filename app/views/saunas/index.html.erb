@@ -4,9 +4,9 @@
 
 <div class="container">
   <p><% @saunas.each do |sauna|%>
-      <br><strong><%= sauna.user.first_name %></strong></br>
+      <br><strong><%= sauna.name %></strong></br>
       <br><%= sauna.description %></br>
-      <br><%= sauna.temperature %></br>
+      <%= "#{sauna.temperature} degrees" %>
       <%= "#{sauna.seat} seats"%>
   <% end %>
   </p>
