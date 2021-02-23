@@ -1,3 +1,6 @@
+<h1><%= @sauna.name %></h1>
+
+
 <div class="container">
   <ul>
     <li><%= @sauna.description %></li>
@@ -9,4 +12,11 @@
       <% end %>
     </li>
   </ul>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@sauna, @booking] do |f| %>
+      <%= f.input :date, :as => :date %>
+      <%= f.submit "Book your sauna" %>
+  <% end %>
 </div>
