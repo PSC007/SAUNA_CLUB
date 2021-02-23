@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- resources :saunas, only: [ :show, :index, :new, :create ] do
+ resources :saunas do
    resources :bookings, only: [:create]
  end
 

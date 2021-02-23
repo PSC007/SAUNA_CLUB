@@ -13,11 +13,15 @@
 
     <div class="card-sauna-infos">
       <div>
-        <h2><%= sauna.user.first_name %></h2>
+        <h2><%= link_to sauna.name, sauna_path(sauna) %></h2>
         <p><%= sauna.description %></p>
-        <p><%= sauna.seat %></p>
+        <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
+        <p><%= link_to "🗑️",
+                      sauna_path(sauna),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></p>
       </div>
-      <h2 class="card-sauna-temperature"><%= sauna.temperature %></h2>
+      <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
   <!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
     </div>
   </div>
