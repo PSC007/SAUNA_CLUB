@@ -1,11 +1,14 @@
 <div class="container">
-<h1>Offer your Hotbox</h1>
+  <div class="text-center pt-3">
+    <h1>Offer your Hotbox</h1>
+  </div>
 
   <div class="container">
     <%= simple_form_for @sauna do |f| %>
+    <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :temperature %>
-    <%= f.input :seat %>
+    <%= f.input :temperature, collection: ["60", "70", "80", "90", "100", "110"] %>
+    <%= f.input :seat, collection: 1..10 %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Add Sauna", notice: "Sauna has been added to your profile" %>
     <% end %>

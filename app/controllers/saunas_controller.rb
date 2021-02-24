@@ -41,7 +41,7 @@ class SaunasController < ApplicationController
   private
 
   def sauna_params
-    params.require(:sauna).permit(:photo, :description, :temperature, :seat)
+    params.require(:sauna).permit(:name, :photo, :description, :temperature, :seat)
   end
 
   def find_sauna
