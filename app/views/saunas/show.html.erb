@@ -1,30 +1,24 @@
 <div class="container">
   <h1 class="title-show mb-4"><%= @sauna.name %></h1>
-  <%= image_tag "sauna.jpg", class: "img-sauna" %>
 
-  <ul class="show-list">
-  
-    <li><%= @sauna.description %></li>
-    <li>Temperature: <%= @sauna.temperature %>°</li>
-    <li>Number of seats: <%= pluralize(@sauna.seat.to_i, "seat") %></li>
-    <li>
-      <% if @sauna.photo.attached? %>
-        <%= cl_image_tag @sauna.photo.key, height: 800, width: 900, crop: :fill %>
-      <% end %>
-    </li>
-  </ul>
+  <div class="img-sauna">
+    <% if @sauna.photo.attached? %>
+      <%= cl_image_tag @sauna.photo.key, height: 300, width: 600, crop: :fill %>
+    <% end %>
+  </div>
 
-  <%= simple_form_for [@sauna, @booking] do |f| %>
+  <div>
+    <ul class="show-list">
+      <li><%= @sauna.description %></li>
+      <li>Temperature: <%= @sauna.temperature %>°</li>
+      <li>Number of seats: <%= pluralize(@sauna.seat.to_i, "seat") %></li>
+    </ul>
+    <%= simple_form_for [@sauna, @booking] do |f| %>
       <%= f.input :date, :as => :date %>
       <%= f.submit "Book your sauna" %>
-  <% end %>
+    <% end %>
+  </div>
 
   <%# <% <%= link_to "Change details", edit_sauna_path(@sauna) %>
 </div>
 
-
-<%# create a show product card
-center title with top padding
-center booking form with image
-centre button book sauna, make it bigger
-comment out "change details "button" %>
