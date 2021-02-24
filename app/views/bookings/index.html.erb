@@ -1,18 +1,27 @@
 <div class="container">
-  <h1>Your bookings</h1>
+  <div class="text-center pb-3 pt-4">
+    <h1>Your bookings</h1>
+  </div>
 
-  <% @bookings.each do |booking| %>
-  <strong><%= link_to booking.sauna.name, sauna_path(booking.sauna) %></strong>
-    <ul>
-      <li><%= booking.date %></li>
-      <li><%= booking.sauna.temperature %></li>
-      <li><%= booking.sauna.seat %> seat</li>
-      <li><%= link_to "Show this booking", booking_path(booking) %> </li>
-      <li><%= link_to "Cancel booking",
-                      booking_path(booking),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %></li>
-    </ul>
-  <% end %>
-
+    <% @bookings.each do |booking| %>
+      <div class="m-3">
+        <div class="card-booking">
+          <% if booking.sauna.photo.attached? %>
+            <%= cl_image_tag(booking.sauna.photo.key)%>
+          <% else %>
+             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
+          <div class="card-booking-infos">
+            <h2><%= booking.sauna.name %></h2>
+            <p><%= booking.sauna.description %></p>
+            <p>Seats count: <strong><%= booking.sauna.seat %></strong></p>
+            <p>Temperature: <strong><%= booking.sauna.temperature %>°</strong> </p>
+          <!--   <%= link_to "Cancel booking",
+                              booking_path(booking),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %>
+ -->      </div>
+        </div>
+      </div>
+    <% end %>
 </div>
