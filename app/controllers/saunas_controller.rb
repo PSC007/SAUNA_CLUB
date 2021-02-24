@@ -3,6 +3,13 @@ class SaunasController < ApplicationController
 
   def index
     @saunas = Sauna.all
+
+    @markers = @saunas.geocoded.map do |sauna|
+      {
+        lat: sauna.latitude,
+        lng: sauna.longitude
+      }
+    end
   end
 
   def show
@@ -41,7 +48,7 @@ class SaunasController < ApplicationController
   private
 
   def sauna_params
-    params.require(:sauna).permit(:name, :photo, :description, :temperature, :seat)
+    params.require(:sauna).permit(:name, :photo, :description, :temperature, :seat, :address)
   end
 
   def find_sauna
