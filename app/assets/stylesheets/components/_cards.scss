@@ -35,6 +35,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  color: black;
 }
 
 .card-sauna-infos .card-sauna-user {
@@ -42,13 +43,6 @@
   right: 16px;
   top: -20px;
   width: 40px;
-}
-
-.card-landing-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 // CARD BOOKING //
@@ -84,4 +78,8 @@
 
 .card-booking .card-booking-infos {
   padding: 16px;
+}
+
+.link-color-card {
+  color: black;
 }
