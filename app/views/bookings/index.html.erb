@@ -1,6 +1,11 @@
+<div class="banner-all-pages">
+  <div class="container">
+    <h1>Your bookings</h1>
+  </div>
+</div>
+
 <div class="container">
   <div class="text-center pb-3 pt-4">
-    <h1>Your bookings</h1>
   </div>
 
     <% @bookings.each do |booking| %>
@@ -12,7 +17,7 @@
              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <% end %>
           <div class="card-booking-infos">
-            <h2><%= booking.sauna.name %></h2>
+            <h2><%= booking.date %> | <%= booking.sauna.name %></h2>
             <p><%= booking.sauna.description %></p>
             <p>Seats count: <strong><%= booking.sauna.seat %></strong></p>
             <p>Temperature: <strong><%= booking.sauna.temperature %>°</strong> </p>

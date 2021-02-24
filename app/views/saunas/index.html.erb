@@ -1,7 +1,10 @@
+<div class="banner-all-pages">
+  <div class="container">
+    <h1>Find the sauna you would like to book</h1>
+  </div>
+</div>
+
 <div class="container">
-  <h1>Find the sauna you would like to book</h1>
-
-
 <div class="card-container">
   <% @saunas.each do |sauna|%>
   <div class="card-sauna">
@@ -13,21 +16,24 @@
 
     <div class="card-sauna-infos">
       <div>
-        <h2><%= link_to sauna.name, sauna_path(sauna) %></h2>
-        <p><%= sauna.description %></p>
-        <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
-        <p><%= link_to "🗑️",
+        <h2><%= link_to sauna.name, sauna_path(sauna), class: "link-color-card" %></h2>
+    <!--     <p><%= link_to "🗑️",
                       sauna_path(sauna),
                       method: :delete,
-                      data: { confirm: "Are you sure?" } %></p>
+                      data: { confirm: "Are you sure?" } %></p> -->
+        <div>
+          <p><%= sauna.description %></p>
+          <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
+        </div>
       </div>
+
       <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
   <!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
     </div>
   </div>
   <% end %>
 </div>
-<button class="btn btn-flat">Click me</button>
+
 
 </div>
 
