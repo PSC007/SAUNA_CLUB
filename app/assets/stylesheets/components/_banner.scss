@@ -1,0 +1,20 @@
+.banner-all-pages {
+  background-image: asset_url("sauna.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.banner-all-pages h1 {
+  color: white;
+}
+
+.banner-all-pages p {
+  color: white;
+  opacity: .7;
+  font-size: 20px;
+}
+
+
