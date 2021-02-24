@@ -1,7 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url "sauna.jpg" %>' );">
-  <div class="container">
-    <h1>The Sauna Club</h1>
-    <p>Sweat the stress out!</p>
-    <%= link_to "Discover our Saunas", saunas_path %>
+<div class="banner home" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6),rgba(0,0,0,0.5)), url('<%= image_url "sauna.jpg" %>' );">
+  <h1>The Sauna Club</h1>
+  <p>Sweat the stress out!</p>
+  <div>
+  <p><%= link_to "Discover our Saunas", saunas_path, class: "btn-flat" %></p>
   </div>
 </div>

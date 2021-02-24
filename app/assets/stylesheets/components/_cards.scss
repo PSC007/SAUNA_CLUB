@@ -44,6 +44,13 @@
   width: 40px;
 }
 
+.card-landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 // CARD BOOKING //
 
 .card-booking {
@@ -78,4 +85,3 @@
 .card-booking .card-booking-infos {
   padding: 16px;
 }
-
