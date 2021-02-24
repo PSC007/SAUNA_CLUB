@@ -17,7 +17,7 @@
              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <% end %>
           <div class="card-booking-infos">
-            <h2><%= booking.sauna.name %></h2>
+            <h2><%= booking.date %> | <%= booking.sauna.name %></h2>
             <p><%= booking.sauna.description %></p>
             <p>Seats count: <strong><%= booking.sauna.seat %></strong></p>
             <p>Temperature: <strong><%= booking.sauna.temperature %>°</strong> </p>
