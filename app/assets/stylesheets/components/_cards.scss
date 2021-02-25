@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  flex-grow: 1;
+  // flex-grow: 1;
   width: 50vw;
 }
 
@@ -12,7 +12,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-sauna > img {
+.card-sauna .img-sauna {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -21,13 +21,13 @@
 .card-sauna h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  // margin: 0;
 }
 
 .card-sauna p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
+  // margin: 0;
 }
 
 
@@ -45,6 +45,11 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-sauna-infos .card-sauna-temperature {
+  position: relative;
+  justify-content: flex-end;
 }
 
 // CARD BOOKING //
