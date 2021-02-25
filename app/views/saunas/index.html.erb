@@ -4,36 +4,42 @@
   </div>
 </div>
 
-<div class="container">
-<div class="card-container">
-  <% @saunas.each do |sauna|%>
-  <div class="card-sauna">
-    <% if sauna.photo.attached? %>
-      <%= cl_image_tag(sauna.photo.key)%>
-    <% else %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <% end %>
+<div class="main-container">
+  <div class="card-container">
+    <% @saunas.each do |sauna|%>
+      <div class="card-sauna">
+        <% if sauna.photo.attached? %>
+          <%= cl_image_tag(sauna.photo.key)%>
+        <% else %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <% end %>
 
-    <div class="card-sauna-infos">
-      <div>
-        <h2><%= link_to sauna.name, sauna_path(sauna), class: "link-color-card" %></h2>
-    <!--     <p><%= link_to "🗑️",
-                      sauna_path(sauna),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %></p> -->
-        <div>
-          <p><%= sauna.description %></p>
-          <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
+        <div class="card-sauna-infos">
+          <div>
+            <h2><%= link_to sauna.name, sauna_path(sauna), class: "link-color-card" %></h2>
+        <!--     <p><%= link_to "🗑️",
+                          sauna_path(sauna),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %></p> -->
+            <div>
+              <p><%= sauna.description %></p>
+              <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
+            </div>
+          </div>
+
+          <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
+      <!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
         </div>
       </div>
-
-      <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
-  <!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 
+
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 </div>
 
