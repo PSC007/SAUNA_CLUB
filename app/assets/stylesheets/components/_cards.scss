@@ -97,3 +97,40 @@
   top: 0;
   margin-left: 8px;
 }
+
+.show-card {
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.showpage-card {
+  h1 {
+    padding: 0 16px;
+  }
+  p { 
+    margin-top: 15px;
+    font-size: 20px;
+    padding: 0 16px;
+    margin-bottom: 16px
+  }
+}
+
+.sauna-show-img {
+  object-fit: cover;
+}
+
+#new_booking {
+  padding-right: 64px;
+}
+
+.fa-logos {
+  width: 20px;
+}
+
+.show-text-avatar {
+  justify-content: flex-start;
+  display: flex;
+  padding-left: 16px;
+}
