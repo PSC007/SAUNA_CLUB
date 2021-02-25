@@ -1,7 +1,8 @@
 .card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+  flex-grow: 1;
 }
 
 .card-sauna {
@@ -82,4 +83,17 @@
 
 .link-color-card {
   color: black;
+}
+
+// card layout index cards and map //
+
+.main-container {
+  display: flex;
+}
+
+#map {
+  height: 900px;
+  position: sticky;
+  top: 0;
+  margin-left: 8px;
 }
