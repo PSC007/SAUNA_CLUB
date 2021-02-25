@@ -15,7 +15,6 @@
     </ul>
     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
       <h2>Book your sauna</h2>
-
       <%= simple_form_for [@sauna, @booking] do |f| %>
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.submit "Go", class: "btn btn-primary" %>

@@ -1,35 +1,38 @@
 <div class="banner-all-pages">
-  <div class="container banner-index-page">
-    <h1><strong>Find the sauna you would like to book</strong></h1>
+  <div class="container">
+    <h1><strong>Find yourself a warm spot</strong></h1>
   </div>
 </div>
 
 <div class="main-container">
   <div class="card-container">
     <% @saunas.each do |sauna|%>
-      <div class="card-sauna">
-        <% if sauna.photo.attached? %>
-          <%= cl_image_tag(sauna.photo.key)%>
-        <% else %>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <% end %>
 
-        <div class="card-sauna-infos">
-          <div>
-            <h2><%= link_to sauna.name, sauna_path(sauna), class: "link-color-card" %></h2>
-        <!--     <p><%= link_to "🗑️",
-                          sauna_path(sauna),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" } %></p> -->
+        <div class="card-sauna">
+          <%= link_to sauna_path(sauna) do %>
+          <% if sauna.photo.attached? %>
+            <%= cl_image_tag(sauna.photo.key, class: "img-sauna") %>
+          <% else %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
 
-              <p><%= sauna.description %></p>
-              <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
+          <div class="card-sauna-infos">
+            <div>
+              <h2><%= link_to sauna.name, sauna_path(sauna), class: "link-color-card" %></h2>
+
+
+                <p><%= sauna.description %></p>
+                <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
+            </div>
+            <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" />
           </div>
+          <% end %>
           <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
           <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
           <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" /> -->
         </div>
-      </div>
+
     <% end %>
   </div>
 
