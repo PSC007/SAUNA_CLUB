@@ -1,44 +1,38 @@
 <div class="container">
-  <h1 class="title-show mb-4"><strong><%= @sauna.name %></strong></h1>
-
-  <div class="img-sauna">
-    <% if @sauna.photo.attached? %>
-      <%= cl_image_tag @sauna.photo.key, height: 300, width: 600, crop: :fill %>
-    <% end %>
-  </div>
-
-  <div>
-    <ul class="show-list">
-      <li><%= @sauna.description %></li>
-      <li>Temperature: <%= @sauna.temperature %>°</li>
-      <li>Number of seats: <%= pluralize(@sauna.seat.to_i, "seat") %></li>
-    </ul>
-    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <h2>Book your sauna</h2>
+  <div class="card-sauna mt-3">
+    <div class="">
+      <% if @sauna.photo.attached? %>
+        <%= cl_image_tag @sauna.photo.key, width: 1140, height: 400, class: "sauna-show-img", crop: :fill %>
+      <% end %>
+    </div>
+    <div class="showpage-card d-flex justify-content-between m-2">
+      <div class="show-text-avatar">
+        <div>
+          <%= cl_image_tag @owner.photo.key, class: "card-sauna-user avatar-bordered" %>
+        </div>
+          <div><h1 class="mb-2"><strong><%= @sauna.name %></strong></h1>
+          <p><%= @sauna.description %></p>
+        <p><i class="fas fa-logos fa-thermometer-three-quarters"> </i> <%= @sauna.temperature %>° |
+          <i class="fas fa-logos fa-chair"> </i> <%= pluralize(@sauna.seat.to_i, "seat") %></p>
+      </div>
+      </div>
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
       <%= simple_form_for [@sauna, @booking] do |f| %>
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit "Go", class: "btn btn-primary" %>
+        <%= f.submit "Book now!", class: "btn btn-all-pages" %>
       <% end %>
   </div>
  </div>
-
-  </div>
-
-  <div>
+  <!-- <div>
     <ul class="show-list">
       <li><% @booking.sauna.reviews.first %></li>
     </ul>
-  </div>
-
-
+  </div> -->
   <ul class="list-group">
     <% @sauna.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %></li>
       <%# if current_user.bookings.include? review.sauna %>
-        <li class="list-group-item"><%= button_to "Remove", review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-flat" %></li>
-      <%# end%>
+<!--         <li class="list-group-item"><%= button_to "Remove", review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-all-pages" %></li>
+ -->      <%# end%>
     <% end %>
   </ul>
-
-  <%# <% <%= link_to "Change details", edit_sauna_path(@sauna) %>
-</div>
