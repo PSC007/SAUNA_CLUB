@@ -16,6 +16,7 @@ class SaunasController < ApplicationController
   end
 
   def show
+    @owner = @sauna.user
     @sauna.user = current_user
     @booking = Booking.new
     @booking.sauna = @sauna
