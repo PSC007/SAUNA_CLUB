@@ -1,10 +1,19 @@
-<div>
-  <h2><%= sauna.name %></h2>
-  <p><%= sauna.description %></p>
-  <p>Tempertature: <%= sauna.temperature %>° | <%= pluralize(sauna.seat.to_i, "seat") %></p>
-</div>
-<div>
-  <% if sauna.photo.attached? %>
+<div class="popup">
+  <div class="popup-title-avatar">
+    <div class="popup avatar">
+      <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered"  %>
+    </div>
+    <div class="popup-title">
+      <h4><%= sauna.name %></h4>
+    </div>
+  </div>
+  <div class="popup-content">
+    <p><%= sauna.description %></p>
+    <p>Tempertature: <%= sauna.temperature %>° | <%= pluralize(sauna.seat.to_i, "seat") %></p>
+  </div>
+  <div class="popup-photo">
+    <% if sauna.photo.attached? %>
     <%= cl_image_tag sauna.photo.key, height: 100, width: 150, crop: :fill %>
   <% end %>
+  </div>
 </div>

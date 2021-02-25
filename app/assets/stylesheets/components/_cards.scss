@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   flex-grow: 1;
+  width: 50vw;
 }
 
 .card-sauna {
@@ -97,11 +98,16 @@
 
 .main-container {
   display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 #map {
   height: 900px;
   position: sticky;
   top: 0;
-  margin-left: 8px;
+  margin-left: 16px;
+  flex-grow: 1;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
