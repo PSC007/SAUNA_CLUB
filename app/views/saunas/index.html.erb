@@ -24,12 +24,11 @@
                 <p><%= sauna.description %></p>
                 <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
             </div>
-            <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" />
+                <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
+                <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
           </div>
           <% end %>
-          <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
-          <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
+
           <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" /> -->
         </div>
 
