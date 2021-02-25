@@ -8,14 +8,29 @@
 }
 
 .banner-all-pages h1 {
-  color: white;
-
+  color: #ffe8d6;
+  /* position: sticky; */
+  position: absolute;
+  top: 120px;
+  left: 40;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  text-shadow: 1px 2px 20px #ffe8d6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .banner-all-pages p {
   color: white;
   opacity: .7;
   font-size: 20px;
+}
+
+.banner-index-page h1 {
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 

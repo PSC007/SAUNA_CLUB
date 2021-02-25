@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text-center pt-3">
-    <h1>Offer your Hotbox</h1>
+    <h1><strong>Offer your Hotbox</strong></h1>
   </div>
 
   <div class="container">
@@ -11,7 +11,7 @@
     <%= f.input :temperature, collection: ["60", "70", "80", "90", "100", "110"] %>
     <%= f.input :seat, collection: 1..10 %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "Add Sauna", notice: "Sauna has been added to your profile", class: "btn-flat" %>
+    <%= f.submit "Add Sauna", class: "btn-flat" %>
     <% end %>
   </div>
 </div>
