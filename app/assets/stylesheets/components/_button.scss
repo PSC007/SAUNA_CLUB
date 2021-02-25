@@ -18,6 +18,23 @@
     transition: background 1s ease-in-out;
   }
 
+.btn-review {
+    opacity: 0.9;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background: rgb(241, 127, 55);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    border-color: #ffe8d6;
+    &:hover {
+      background: rgb(237, 149, 94);
+      text-decoration: none;
+      color: white;
+    }
+
 .btn-landing {
   border-color: #ffe8d6;
   color: #ffe8d6;

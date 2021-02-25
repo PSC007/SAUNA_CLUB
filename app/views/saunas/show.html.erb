@@ -13,11 +13,32 @@
       <li>Temperature: <%= @sauna.temperature %>°</li>
       <li>Number of seats: <%= pluralize(@sauna.seat.to_i, "seat") %></li>
     </ul>
-    <%= simple_form_for [@sauna, @booking] do |f| %>
-      <%= f.input :date, :as => :date %>
-      <%= f.submit "Book Sauna", class: "btn btn-all-pages" %>
-    <% end %>
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Book your sauna</h2>
+      <%= simple_form_for [@sauna, @booking] do |f| %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit "Go", class: "btn btn-primary" %>
+      <% end %>
   </div>
+ </div>
+
+  </div>
+
+  <div>
+    <ul class="show-list">
+      <li><% @booking.sauna.reviews.first %></li>
+    </ul>
+  </div>
+
+
+  <ul class="list-group">
+    <% @sauna.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+      <%# if current_user.bookings.include? review.sauna %>
+        <li class="list-group-item"><%= button_to "Remove", review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-flat" %></li>
+      <%# end%>
+    <% end %>
+  </ul>
 
   <%# <% <%= link_to "Change details", edit_sauna_path(@sauna) %>
 </div>

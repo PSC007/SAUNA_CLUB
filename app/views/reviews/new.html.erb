@@ -1,0 +1,6 @@
+<div class="container-review-new">
+  <%= simple_form_for [ @sauna, @review ] do |f| %>
+    <%= f.input :content, label: "Write your review here:" %>
+    <%= f.submit "Submit review", class: "btn btn-review" %>
+  <% end %>
+</div>

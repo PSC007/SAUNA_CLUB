@@ -1,6 +1,6 @@
 <div class="banner-all-pages">
   <div class="container">
-    <h1>Your bookings</h1>
+    <h1>Your Bookings</h1>
   </div>
 </div>
 
@@ -13,6 +13,7 @@
       <li><%= @booking.sauna.description %> </li>
       <li><%= @booking.sauna.temperature %>°</li>
       <li><%= pluralize(@booking.sauna.seat.to_i, "seat") %></li>
+      <li><% @booking.sauna.review %></li>
       <li><%= link_to "Cancel booking",
                       booking_path(booking),
                       method: :delete,
