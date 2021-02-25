@@ -1,6 +1,6 @@
 <div class="banner-all-pages">
-  <div class="container">
-    <h1>Find the sauna you would like to book</h1>
+  <div class="container banner-index-page">
+    <h1><strong>Find the sauna you would like to book</strong></h1>
   </div>
 </div>
 
@@ -21,14 +21,12 @@
                           sauna_path(sauna),
                           method: :delete,
                           data: { confirm: "Are you sure?" } %></p> -->
-            <div>
+
               <p><%= sauna.description %></p>
               <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
-            </div>
           </div>
-
           <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
-      <!--     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" />
         </div>
       </div>
     <% end %>
