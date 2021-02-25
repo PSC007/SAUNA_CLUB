@@ -78,8 +78,16 @@
   margin-top: 8px;
 }
 
-.card-booking .card-booking-infos {
+.card-booking-infos {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+
+}
+
+.review-button-index {
+  align-self: center;
 }
 
 .link-color-card {
