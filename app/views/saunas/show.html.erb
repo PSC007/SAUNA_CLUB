@@ -21,12 +21,10 @@
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.submit "Book now!", class: "btn btn-all-pages" %>
       <% end %>
-  </div>   
+  </div>
  </div>
-    <ul class="show-list">
-      <li><% @booking.sauna.reviews.first %></li>
-    </ul>
-  </div> -->
+
+  </div>
   <ul class="list-group">
     <% @sauna.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %></li>
@@ -35,3 +33,4 @@
  -->      <%# end%>
     <% end %>
   </ul>
+</div>
