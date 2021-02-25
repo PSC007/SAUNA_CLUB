@@ -13,11 +13,16 @@
       <li>Temperature: <%= @sauna.temperature %>°</li>
       <li>Number of seats: <%= pluralize(@sauna.seat.to_i, "seat") %></li>
     </ul>
-    <%= simple_form_for [@sauna, @booking] do |f| %>
-      <%= f.input :date, :as => :date %>
-      <%= f.submit "Book your sauna", class: "btn btn-all-pages" %>
-    <% end %>
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Book your sauna</h2>
+
+      <%= simple_form_for [@sauna, @booking] do |f| %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit "Go", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+ </div>
+
   </div>
 
-  <%# <% <%= link_to "Change details", edit_sauna_path(@sauna) %>
-</div>
+
