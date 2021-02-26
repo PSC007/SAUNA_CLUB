@@ -7,7 +7,7 @@ const buildMap = (mapElement) => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/brieucbadasonic/cklk079gz0x2i17mw59v8dk44'
-  });
+   });
 };
 
 const addMarkersToMap = (map, markers) => {
