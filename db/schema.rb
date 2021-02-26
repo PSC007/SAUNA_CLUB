@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_02_26_103938) do
 
   # These are extensions that must be enabled in order to support this database
@@ -52,7 +53,9 @@ ActiveRecord::Schema.define(version: 2021_02_26_103938) do
     t.bigint "sauna_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["sauna_id"], name: "index_reviews_on_sauna_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "saunas", force: :cascade do |t|
@@ -87,5 +90,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_103938) do
   add_foreign_key "bookings", "saunas"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "saunas"
+  add_foreign_key "reviews", "users"
   add_foreign_key "saunas", "users"
 end

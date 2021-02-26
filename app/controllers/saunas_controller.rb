@@ -20,6 +20,8 @@ class SaunasController < ApplicationController
     @sauna.user = current_user
     @booking = Booking.new
     @booking.sauna = @sauna
+    # @sauna = Sauna.find(params[:id])
+    @review = Review.new
   end
 
   def new
