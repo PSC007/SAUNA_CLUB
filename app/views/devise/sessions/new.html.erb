@@ -1,6 +1,6 @@
 <div class="container", style="width:350px">
-  <div class="login-signup-title-design">
-    <h2>New session</h2>
+  <div class="login-signup-title-design", style="margin-bottom:40px">
+    <h2>Login</h2>
   </div>
 
 
@@ -16,8 +16,8 @@
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
     <div>
-      <div class="container form-actions alignment-form-actions">
-        <%= f.button :submit, "Log in", class: "btn btn-all-pages btn-sign-up-log-in"%>
+      <div class="container form-actions alignment-form-actions", style="margin-top:30px">
+        <%= f.button :submit, "Log in", class: "btn btn-all-pages btn-sign-up-log-in btn-focus"%>
       </div>
     </div>
   <% end %>
