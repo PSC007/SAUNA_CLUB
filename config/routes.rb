@@ -4,7 +4,13 @@ Rails.application.routes.draw do
    resources :reviews, only: [ :new, :create ]
  end
 
-  resources :bookings, only: [ :index, :show, :destroy ]
+  resources :bookings, only: [ :index, :destroy ] do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
+
   resources :reviews, only: [ :destroy ]
   resources :comments, only: [ :show, :edit, :update, :destroy ]
 
