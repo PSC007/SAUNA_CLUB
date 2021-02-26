@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :edit, :destroy]
+  before_action :find_booking, only: [:show, :edit, :destroy, :accept, :reject]
 
   def index
-    @bookings = Booking.all.where(user: current_user)
+    @my_bookings = Booking.all.where(user: current_user)
+    @my_requests = Booking.all.select { |booking| booking.sauna.user == current_user }
   end
 
   def show
@@ -32,6 +33,16 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to saunas_path
+  end
+
+  def accept
+    @booking.update(accepted: true)
+    redirect_to bookings_path
+  end
+
+  def reject
+    @booking.update(accepted: false)
+    redirect_to bookings_path
   end
 
   private
