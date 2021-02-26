@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
-puts "Cleaning DB"
+puts "Cleaning DB..."
 User.destroy_all
 Sauna.destroy_all
 
-puts "create 12 user"
+puts "Seeding 12 users..."
 
 user1 = User.new(first_name: "Valerie", last_name:"Muller", email: "valerie@gmail.com", password: "123456")
 user1.save!
@@ -73,10 +73,10 @@ user12.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614254791/sauna%20seeds/Alty_ohvn9h.jpg')
 user12.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-puts "creating 12 sauna seeds"
-sauna1 = Sauna.new(name: "Super cozy sauna",
+puts "Seedinf 12 saunas..."
+sauna1 = Sauna.new(name: "Super Cozy Sauna",
                    seat: 1,
-                   description: "next to a lake for cooling down",
+                   description: "Next to a lake for cooling down.",
                    temperature: "75",
                    user: user1,
                    address: "Ellricher str. Berlin")
@@ -84,9 +84,9 @@ sauna1.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245500/sauna%20seeds/sauna_1_yrhsaq.jpg')
 sauna1.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna2 = Sauna.new(name: "Romantic sauna for two",
+sauna2 = Sauna.new(name: "Romantic Sauna For Two",
                    seat: 2,
-                   description: "perfect for couple",
+                   description: "Perfect for couple.",
                    temperature: "80",
                    user: user2,
                    address: "wiener str 34 Berlin")
@@ -94,9 +94,9 @@ sauna2.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245499/sauna%20seeds/sauna_20_xdb0ma.jpg')
 sauna2.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna3 = Sauna.new(name: "Outdoor sauna next to river",
+sauna3 = Sauna.new(name: "Outdoor Sauna Next To River",
                    seat: 3,
-                   description: "nice river for cooling",
+                   description: "Nice river for cooling.",
                    temperature: "85",
                    user: user3,
                    address: "rosa luxemburg platz Berlin")
@@ -106,7 +106,7 @@ sauna3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
 sauna4 = Sauna.new(name: "Winter Oasis",
                    seat: 5,
-                   description: "hot and sweaty",
+                   description: "Hot and sweaty.",
                    temperature: "90",
                    user: user4,
                    address: "humboldthain park Berlin")
@@ -114,9 +114,9 @@ sauna4.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245475/sauna%20seeds/sauna_5_sce7ym.jpg')
 sauna4.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna5 = Sauna.new(name: "Warm sensation",
+sauna5 = Sauna.new(name: "Warm Sensation",
                    seat: 3,
-                   description: "you will forget all you problem",
+                   description: "You will forget all your problems.",
                    temperature: "70",
                    user: user5,
                    address: "Brandenburgische Straße 66 Berlin")
@@ -124,9 +124,9 @@ sauna5.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245495/sauna%20seeds/sauna_6_trsj9x.jpg')
 sauna5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna6 = Sauna.new(name: "Familly sauna",
+sauna6 = Sauna.new(name: "Familly Sauna",
                    seat: 8,
-                   description: "great time for kids and parents",
+                   description: "Great time for kids and parents.",
                    temperature: "80",
                    user: user6,
                    address: "Leopoldstraße 17 Berlin")
@@ -136,7 +136,7 @@ sauna6.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
 sauna7 = Sauna.new(name: "Finnish Sauna",
                    seat: 4,
-                   description: "enjoy our home made sauna",
+                   description: "Enjoy our home made sauna.",
                    temperature: "110",
                    user: user7,
                    address: "Genslerstraße 93 Berlin")
@@ -144,9 +144,9 @@ sauna7.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245494/sauna%20seeds/sauna_18_ziu6rx.jpg')
 sauna7.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna8 = Sauna.new(name: "Warm dreams",
+sauna8 = Sauna.new(name: "Warm Dreams",
                    seat: 5,
-                   description: "come to our sauna and enjoy!",
+                   description: "Come to our sauna and enjoy!",
                    temperature: "90",
                    user: user8,
                    address: "Waßmannsdorfer Chaussee 23 Berlin")
@@ -154,9 +154,9 @@ sauna8.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245493/sauna%20seeds/sauna_16_fqulms.jpg')
 sauna8.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna9 = Sauna.new(name: "The Wagon sauna",
+sauna9 = Sauna.new(name: "The Wagon Sauna",
                    seat: 10,
-                   description: "perfect for after coding cooldown",
+                   description: "Perfect for after coding cooldown.",
                    temperature: "95",
                    user: user9,
                    address: "Wartburgstr. 22-24 Berlin")
@@ -164,9 +164,9 @@ sauna9.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245491/sauna%20seeds/sauna_9_x6xs46.jpg')
 sauna9.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna10 = Sauna.new(name: "Death valley",
+sauna10 = Sauna.new(name: "Death Valley",
                    seat: 8,
-                   description: "stress free sauna for hot lovers",
+                   description: "Stress free sauna for hot lovers.",
                    temperature: "110",
                    user: user10,
                    address: "Kolonnenstraße 61, 10827 Berlin")
@@ -176,7 +176,7 @@ sauna10.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg'
 
 sauna11 = Sauna.new(name: "Santis Hotbox",
                    seat: 3,
-                   description: "come and have a beer",
+                   description: "Come and have a beer.",
                    temperature: "85",
                    user: user11,
                    address: "Augsburger Str. 36-42, 10789 Berlin")
@@ -184,9 +184,9 @@ sauna11.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245484/sauna%20seeds/sauna_14_cwlsgk.jpg')
 sauna11.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-sauna12 = Sauna.new(name: "Relaxing time",
+sauna12 = Sauna.new(name: "Relaxing Time",
                    seat: 7,
-                   description: "enjoy our home made sauna",
+                   description: "Quiet and relaxing time.",
                    temperature: "90",
                    user: user12,
                    address: "Plesser Str. 1, 12435 Berlin Berlin")
@@ -194,6 +194,6 @@ sauna12.save!
 file = URI.open('https://res.cloudinary.com/marcel-feindt/image/upload/v1614245479/sauna%20seeds/sauna_13_ckb9i7.jpg')
 sauna12.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-puts "12 sauna created"
+puts "Seeds ar done!  Go back to work now ;)"
 
 
