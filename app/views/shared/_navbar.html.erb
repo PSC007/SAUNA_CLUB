@@ -9,10 +9,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "My bookings", bookings_path, class: "nav-link" %>
+          <%= link_to "Add Sauna", new_sauna_path, class: "nav-link  btn btn-all-pages btn-navbar" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Add sauna", new_sauna_path, class: "nav-link" %>
+          <%= link_to "My Bookings", bookings_path, class: "nav-link pr-3" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "marcel.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
