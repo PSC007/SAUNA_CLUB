@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_113327) do
     t.bigint "sauna_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status", default: "pending"
+    t.boolean "accepted"
     t.index ["sauna_id"], name: "index_bookings_on_sauna_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

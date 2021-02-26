@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
  resources :saunas do
    resources :bookings, only: [:create]
-   resources :reviews, only: [ :new, :create ]
+   resources :reviews, only: [ :create, :new ]
  end
 
-  resources :bookings, only: [ :index, :show, :destroy ]
+  resources :bookings, only: [ :index, :destroy ] do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
+
   resources :reviews, only: [ :destroy ]
   resources :comments, only: [ :show, :edit, :update, :destroy ]
 

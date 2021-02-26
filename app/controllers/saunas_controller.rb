@@ -9,7 +9,7 @@ class SaunasController < ApplicationController
         lat: sauna.latitude,
         lng: sauna.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { sauna: sauna }),
-        image_url: helpers.asset_url('32x32.png')
+        image_url: helpers.asset_url('pin-9-32.png')
       }
 
     end
@@ -20,6 +20,8 @@ class SaunasController < ApplicationController
     @sauna.user = current_user
     @booking = Booking.new
     @booking.sauna = @sauna
+    # @sauna = Sauna.find(params[:id])
+    @review = Review.new
   end
 
   def new
