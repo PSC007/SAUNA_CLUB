@@ -1,20 +1,31 @@
 class ReviewsController < ApplicationController
   def new
-    # we need @sauna in our `simple_form_for` ???
     @sauna = Sauna.find(params[:sauna_id])
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
     @sauna = Sauna.find(params[:sauna_id])
+    @review = Review.new(review_params)
+    @review.user = current_user
     @review.sauna = @sauna
     if @review.save
-      redirect_to sauna_path(@sauna)
+      redirect_to sauna_path(@sauna, anchor: "review-#{@review.id}")
     else
-      render :new
+      render 'sauna/show'
     end
   end
+
+  # def create
+  #   @review = Review.new(review_params)
+  #   @sauna = Sauna.find(params[:sauna_id])
+  #   @review.sauna = @sauna
+  #   if @review.save
+  #     redirect_to sauna_path(@sauna)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def destroy
     @review = Review.find(params[:id])

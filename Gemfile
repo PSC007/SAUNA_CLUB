@@ -28,6 +28,7 @@ gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 gem 'flatpickr'
+gem 'turbolinks_render'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -35,6 +36,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'pry-byebug'
