@@ -1,0 +1,56 @@
+.booking-review {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-button-index {
+  align-self: center;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  width: fit-content !important;
+}
+
+.div-review-btn {
+  display: flex;
+  align-items: flex-end;
+}
+
+.h1-review {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.card-booking-request {
+  // margin-top: 16px;
+  padding: 8px;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+
+.card-booking-request-btn {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  width: 100px !important;
+}
+
+.card-review-h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.card-review-p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 8px;
+}
+
+.myrequest-flex {
+  display: flex;
+  flex-direction: column;
+}
