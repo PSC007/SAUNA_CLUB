@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :sauna
-  validates :content, presence: true
+  belongs_to :user
+  validates :content, length: { minimum: 20 }
 end

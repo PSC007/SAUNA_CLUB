@@ -24,13 +24,35 @@
   </div>
  </div>
 
-  </div>
+<!--   </div>
   <ul class="list-group">
     <% @sauna.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %></li>
       <%# if current_user.bookings.include? review.sauna %>
-<!--         <li class="list-group-item"><%= button_to "Remove", review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-all-pages" %></li>
- -->      <%# end%>
+        <li class="list-group-item"><%= button_to "Remove", review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-all-pages" %></li>
+      <%# end%>
     <% end %>
-  </ul>
+  </ul> -->
+
 </div>
+
+<div class="container content-container">
+  <h2 class="mb-2">
+    <%= pluralize @sauna.reviews.size, "Review" %>
+  </h2>
+
+  <div id="reviews">
+    <% if @sauna.reviews.blank? %>
+      <p>Be the first to leave a review for <%= @sauna.name %></p>
+    <% else %>
+      <% @sauna.reviews.each do |review| %>
+        <p><%= review.user.first_name %></p>
+        <p id="review-<%= review.id %>"><%= review.content %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for([ @sauna, @review ], remote: true) do |f| %>
+    <%= f.input :content, as: :text, label: "Write your review here:" %>
+    <%= f.button :submit, class: "btn btn-all-pages"%>
+  <% end %>
