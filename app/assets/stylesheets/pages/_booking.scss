@@ -54,3 +54,18 @@
   display: flex;
   flex-direction: column;
 }
+
+.review-div {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.user-review {
+  border-bottom: 1px solid #D5925C;
+  padding: 8px;
+  padding-top: 16px;
+}
