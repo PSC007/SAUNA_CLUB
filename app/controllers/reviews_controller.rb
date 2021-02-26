@@ -9,10 +9,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.sauna = @sauna
-    if @review.save!
+    if @review.save
       redirect_to sauna_path(@sauna, anchor: "review-#{@review.id}")
     else
-      render :new
+      render 'sauna/show'
     end
   end
 
