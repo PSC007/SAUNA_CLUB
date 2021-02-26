@@ -19,7 +19,7 @@
             <div>
               <h2 class="pt-1"><%= booking.date %> | <%= link_to booking.sauna.name, sauna_path(booking.sauna), class: "link-color-card" %></h2>
               <p><%= booking.sauna.description %></p>
-              <p>Seats count: <strong><%= booking.sauna.seat %></strong> | Temperature: <strong><%= booking.sauna.temperature %>°</strong></p>
+              <p>Seats: <strong><%= booking.sauna.seat %></strong> | Temperature: <strong><%= booking.sauna.temperature %>°</strong></p>
               <% if booking.accepted %>
                 <p>Booking Accepted</p>
               <% elsif booking.accepted == false %>
