@@ -1,12 +1,11 @@
 <div class="banner-all-pages">
   <div class="container">
-    <h1><strong>Your Bookings</strong></h1>
-
+    <h1><strong>My Bookings</strong></h1>
   </div>
 </div>
 
 <div class="container">
-    <% @bookings.each do |booking| %>
+    <% @my_bookings.each do |booking| %>
       <div class="m-3">
         <div class="card-booking">
           <% if booking.sauna.photo.attached? %>
@@ -20,6 +19,13 @@
               <p><%= booking.sauna.description %></p>
               <p>Seats count: <strong><%= booking.sauna.seat %></strong></p>
               <p>Temperature: <strong><%= booking.sauna.temperature %>°</strong> </p>
+              <% if booking.accepted %>
+                <p>Accepted</p>
+              <% elsif booking.accepted == false %>
+                <p>Rejected</p>
+              <% else %>
+                <p>Pending</p>
+              <% end  %>
             <!--   <%= link_to "Cancel booking",
                                 booking_path(booking),
                                 method: :delete,
@@ -31,6 +37,30 @@
           </div>
         </div>
       </div>
+    <% end %>
+    <% if current_user.saunas.any? %>
+      <h1>My Sauna Requests</h1>
+    <% if @my_requests.empty? %>
+      <p>No requests</p>
+    <% end %>
+    <% @my_requests.each do |booking| %>
+      <div class="card-booking-infos">
+        <div>
+          <h2><%= booking.date %> | <%= link_to booking.sauna.name, sauna_path(booking.sauna), class: "link-color-card" %></h2>
+          <p><%= booking.sauna.description %></p>
+          <p>Seats count: <strong><%= booking.sauna.seat %></strong></p>
+          <p>Temperature: <strong><%= booking.sauna.temperature %>°</strong></p>
+          <% if booking.accepted.nil? %>
+            <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "btn btn-all-pages" %>
+            <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "btn btn-all-pages" %>
+          <% elsif booking.accepted %>
+            <p>Booking accepted</p>
+          <% else %>
+            <p>Booking rejected</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
     <% end %>
 </div>
 

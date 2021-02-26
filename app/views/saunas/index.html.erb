@@ -19,7 +19,11 @@
           </div>
           <div>
             <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
-            <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
+            <% if sauna.user.photo.attached? %>
+              <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
+            <% else %>
+              <%= image_tag "marcel.jpg", class: "avatar" %>
+            <% end %>
           </div>
         </div>
           <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" /> -->
@@ -32,3 +36,5 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+

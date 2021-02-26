@@ -8,7 +8,11 @@
     <div class="showpage-card d-flex justify-content-between m-2">
       <div class="show-text-avatar">
         <div>
+          <% if @owner.photo.attached? %>
           <%= cl_image_tag @owner.photo.key, class: "card-sauna-user avatar-bordered" %>
+          <% else %>
+          <%= image_tag "marcel.jpg", class: "avatar" %>
+          <% end %>
         </div>
           <div><h1 class="mb-2"><strong><%= @sauna.name %></strong></h1>
           <p><%= @sauna.description %></p>
