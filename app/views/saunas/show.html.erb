@@ -27,17 +27,6 @@
       <% end %>
   </div>
  </div>
-
-<!--   </div>
-  <ul class="list-group">
-    <% @sauna.reviews.each do |review| %>
-      <li class="list-group-item"><%= review.content %></li>
-      <%# if current_user.bookings.include? review.sauna %>
-        <li class="list-group-item"><%= button_to "Remove", review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-all-pages" %></li>
-      <%# end%>
-    <% end %>
-  </ul> -->
-
 </div>
 
 <div class="container content-container">
@@ -56,7 +45,4 @@
     <% end %>
   </div>
 
-  <%= simple_form_for([ @sauna, @review ], remote: true) do |f| %>
-    <%= f.input :content, as: :text, label: "Write your review here:" %>
-    <%= f.button :submit, class: "btn btn-all-pages"%>
-  <% end %>
+
