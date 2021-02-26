@@ -7,43 +7,28 @@
 <div class="main-container">
   <div class="card-container">
     <% @saunas.each do |sauna|%>
-
-        <div class="card-sauna">
-          <%= link_to sauna_path(sauna) do %>
-          <% if sauna.photo.attached? %>
-            <%= cl_image_tag(sauna.photo.key, class: "img-sauna") %>
-          <% else %>
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <% end %>
-
-          <div class="card-sauna-infos">
-            <div>
-              <h2><%= link_to sauna.name, sauna_path(sauna), class: "link-color-card" %></h2>
-
-
-                <p><%= sauna.description %></p>
-                <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
-            </div>
-                <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
-                <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
+      <div class="card-sauna">
+        <%= link_to sauna_path(sauna) do %>
+          <%= cl_image_tag(sauna.photo.key, class: "img-sauna") %>
+        <% end %>
+        <div class="card-sauna-infos">
+          <div>
+            <h2><%= sauna.name %></h2>
+            <p><%= sauna.description %></p>
+            <p><%= pluralize(sauna.seat.to_i, "seat") %></p>
           </div>
-          <% end %>
-
-          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" /> -->
+          <div>
+            <h2 class="card-sauna-temperature"><%= "#{sauna.temperature}°" %></h2>
+            <%= cl_image_tag sauna.user.photo.key, class: "card-sauna-user avatar-bordered" %>
+          </div>
         </div>
-
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-sauna-user avatar-bordered" /> -->
+      </div>
     <% end %>
   </div>
-
-
   <div id="map"
      style="width: 50%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 </div>
-
-
-
-
