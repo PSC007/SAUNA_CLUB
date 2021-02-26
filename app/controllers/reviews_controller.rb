@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
-  # def new
-  #   @sauna = Sauna.find(params[:sauna_id])
-  #   @review = Review.new
-  # end
+  def new
+    @sauna = Sauna.find(params[:sauna_id])
+    @review = Review.new
+  end
 
   def create
     @sauna = Sauna.find(params[:sauna_id])

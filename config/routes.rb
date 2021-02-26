@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  resources :saunas do
    resources :bookings, only: [:create]
-   resources :reviews, only: [ :create ]
+   resources :reviews, only: [ :create, :new ]
  end
 
   resources :bookings, only: [ :index, :destroy ] do
